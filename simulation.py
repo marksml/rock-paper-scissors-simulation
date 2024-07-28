@@ -6,8 +6,8 @@ import math
 pygame.init()
 
 # Constants
-WINDOW_WIDTH = 810
-WINDOW_HEIGHT = 1440
+WINDOW_WIDTH = 1440
+WINDOW_HEIGHT = 900
 ENTITY_RADIUS = 5
 SPEED = 3
 DETECTION_RADIUS = 100
@@ -110,7 +110,7 @@ def adjust_movement():
         entity.draw()
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption("Rock Paper Scissors Simulation")
+pygame.display.set_caption("Schere Stein Papier Simulation")
 clock = pygame.time.Clock()
 running = True
 
@@ -125,18 +125,18 @@ while running:
 
     winner_text = None
     if rock_count == len(entities):
-        winner_text = "Rock"
+        winner_text = "Stein"
     elif paper_count == len(entities):
-        winner_text = "Paper"
+        winner_text = "Papier"
     elif scissors_count == len(entities):
-        winner_text = "Scissors"
+        winner_text = "Schere"
     
     if winner_text:
         pygame.font.init()
         font_large = pygame.font.Font(None, 100)
         font_small = pygame.font.Font(None, 74)
 
-        winner_title_surface = font_large.render("Winner!", True, pygame.Color("#6aff9b"))
+        winner_title_surface = font_large.render("Gewinner!", True, pygame.Color("#6aff9b"))
         tribe_name_surface = font_small.render(winner_text, True, (255, 255, 255))
 
         padding = 20
